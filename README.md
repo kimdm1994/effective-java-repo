@@ -1,1 +1,1 @@
-# effective-java-repo
+# 백기선 이펙티브 자바
