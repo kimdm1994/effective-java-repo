@@ -12,8 +12,8 @@ public class Product {
         * 정적 팩토리 메서드 호출!!
         * 인스턴스를 가져올 수 있지만, 생성은 불가능!!
         * */ 
-        Settings settings1 = Settings.newInstance();
-        Settings settings2 = Settings.newInstance();
+        Settings settings1 = Settings.getInstance();
+        Settings settings2 = Settings.getInstance();
 
         System.out.println(settings1);
         System.out.println(settings2);

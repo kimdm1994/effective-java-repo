@@ -1,5 +1,9 @@
 package com.me.eastern.effective.chapter01.item01;
 
+/*
+ * 이 클래스의 인스턴스는 #getInstance()를 사용.
+ * @see #hello()
+ * */
 public class Settings {
 
     private boolean useAutoSteering;
@@ -26,28 +30,13 @@ public class Settings {
     /*
      * 생성자 vs 정적 팩터리 메서드 비교
      * */
-    public Settings(boolean useAutoSteering, boolean useABS, Difficulty difficulty) {
-        this.useAutoSteering = useAutoSteering;
-        this.useABS = useABS;
-        this.difficulty = difficulty;
-    }
+    // public Settings(boolean useAutoSteering, boolean useABS, Difficulty difficulty) {
+    //     this.useAutoSteering = useAutoSteering;
+    //     this.useABS = useABS;
+    //     this.difficulty = difficulty;
+    // }
 
     private static final Settings SETTINGS = new Settings();
-
-    /*
-     * 오로지 정적 팩터리 메서드를 통해 가져갈 수 있음.
-     * 매번 팩터리 안에서 새로 만들어 사용할 떄는 newInstance, createInstance 네이밍 사용
-     * */
-    public static Settings newInstance() {
-        return SETTINGS;
-    }
-
-    /*
-     * 매개변수를 받아서 무언가를 만들 때 of라는 네이밍을 패턴을 사용한다.
-     * */
-    public static Settings of(boolean useABS) {
-        return SETTINGS;
-    }
 
     /*
      * 미리 만들어져 있는 인스턴스를 가져올 때는 getInstance라는 네이밍 패턴을 사용한다.
@@ -55,6 +44,21 @@ public class Settings {
     public static Settings getInstance() {
         return SETTINGS;
     }
+
+    /*
+     * 오로지 정적 팩터리 메서드를 통해 가져갈 수 있음.
+     * 매번 팩터리 안에서 새로 만들어 사용할 떄는 newInstance, createInstance 네이밍 사용
+     * */
+    // public static Settings newInstance() {
+    //     return SETTINGS;
+    // }
+
+    /*
+     * 매개변수를 받아서 무언가를 만들 때 of라는 네이밍을 패턴을 사용한다.
+     * */
+    // public static Settings of(boolean useABS) {
+    //     return SETTINGS;
+    // }
 
     // public static void main(String[] args) {
     //     List<String> list = new ArrayList<>();
